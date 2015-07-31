@@ -1,0 +1,37 @@
+name: Weather-Lock
+version: 1.0
+author: mfunGamer
+main: mfungamer.plugin.weatherlock.Main
+commands:
+  custom-weather:
+    usage: /custom-weather <weather> [duration] [world]
+    description: Allows you to over write a locked weather.
+  lock-weather:
+    usage: /lock-weather [weather] [world]
+    description: Locks the weather in a world.
+  unlock-weather:
+    usage: /unlock-weather [world]
+    description: Unlocks the weather in a world.
+  info-weather:
+    usage: /info-weather [world]
+    description: Shows if the weather is influenced by the plugin.
+permissions:
+  customweather.*:
+    description: Grants access to all Custom-Weather commands.
+    children:
+      customweather.lock: true
+      customweather.unlock: true
+      customweather.custom: true
+      customweather.info: true
+  customweather.lock:
+    description: Grants access to /lock-weather.
+    default: op
+  customweather.unlock:
+    description: Grants access to /unlock-weather.
+    default: op
+  customweather.custom:
+    description: Grants access to /custom-weather.
+    default: op
+  customweather.info:
+    description: Allows you to see locked weather.
+    default: op
